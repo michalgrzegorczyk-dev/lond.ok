@@ -5,7 +5,7 @@ const AppContext = React.createContext({})
 
 const AppProvider = ({children}) => {
   const [questions, setQuestions] = useState([])
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState(null)
 
   const fetchMeals = () => {
@@ -17,7 +17,7 @@ const AppProvider = ({children}) => {
   }, [])
 
   const fetchRandomQuestion = () => {
-    // fetchMeals(randomMealUrl)
+    setQuestions([data.questions[generateRandomInteger(0, data.questions.length-1)]]);
   }
 
   const selectQuestion = (questionId) => {
@@ -43,3 +43,5 @@ export const useGlobalContext = () => {
 }
 
 export {AppContext, AppProvider}
+
+const generateRandomInteger = (min, max) => Math.floor(min + Math.random()*(max - min + 1))

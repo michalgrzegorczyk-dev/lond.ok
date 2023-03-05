@@ -8,7 +8,6 @@ export const data = {
       title: 'Javascript - asynchroniczny czy synchroniczny? Kiedy jest jaki oraz jaka jest różnica? Podaj przykłady.',
       answer:
 `
-<br>
 <p>Javascript może być zarówno synchroniczny, jak i asynchroniczny. Przez większość czasu używamy go w sposób
 synchroniczny.</p>
 <br>
@@ -40,9 +39,12 @@ synchroniczny.</p>
     {
       id: 2,
       title: 'Czym jest synchroniczność w Javascript?',
-      answer:`<p>Synchroniczność oznacza, że kod wykonuje się w określonej sekwencji instrukcji podanych w programie. Każda poprzednia instrukcja czeka na wykonanie poprzedniej instrukcji. Np.</p>
-        <code>console.log(\'Hello\');</code><br>
-        <code>console.log(\'World\');</code>`,
+      answer:
+        `
+<p>Synchroniczność oznacza, że kod wykonuje się w określonej sekwencji instrukcji podanych w programie. Każda poprzednia instrukcja czeka na wykonanie poprzedniej instrukcji. Np.</p>
+<code>console.log(\'Hello\');</code><br>
+<code>console.log(\'World\');</code>
+`,
       keywords:[],
       category: ['javascript'],
     },
@@ -101,19 +103,17 @@ synchroniczny.</p>
     {
       id: 7,
       title: 'Jakie stany ma promise?',
-      answer: 'pending - odpalenie promista \nfulfilled - operacja zakonczona powodzeniem \nrejected- operacja zakonczona porazka',
+      answer: `pending - odpalenie promista <br><br>fulfilled - operacja zakonczona powodzeniem <br><br>rejected- operacja zakonczona porazka`,
       keywords:[],
       category: ['javascript'],
     },
     {
       id: 8,
       title: 'Jakie są różnice pomiędzy promisem, a observablem?',
-      answer: 'Promisy emitują tylko jedną wartość w czasie, natomiast observable mogą emitować ich wiele\n' +
-        'Promisy nie są leniwe - odpalają się od razu po stworzeniu, natomiast observable nie emitują nic dopóki ich nie zasubskrybujesz.\n' +
-        'Emitują jak są hot :)\n' +
-        '\n' +
-        'Promisów nie można anulować, natomiast observable mają subskrybcje, które można anulować, żeby przestał emitować dalsze wartości\n' +
-        'Promise nie ma żadnych operatorów (poza funcjami all, allSettled, any, reace, może poza then, który chainuje promisy i response.json(), który konwertuje response z promisa do jsona), natomiast observable ma pełno operacji, takich jak: map, retry, filter i więcej',
+      answer: `Promisy emitują tylko jedną wartość w czasie, natomiast observable mogą emitować ich wiele <br><br>Promisy nie są leniwe - odpalają się od razu po stworzeniu, natomiast observable nie emitują nic dopóki ich nie zasubskrybujesz.
+        (Emitują jak są hot) <br><br>
+        Promisów nie można anulować, natomiast observable mają subskrybcje, które można anulować, żeby przestał emitować dalsze wartości <br><br>
+        Promise nie ma żadnych operatorów (poza funcjami all, allSettled, any, reace, może poza then, który chainuje promisy i response.json(), który konwertuje response z promisa do jsona), natomiast observable ma pełno operacji, takich jak: map, retry, filter i więcej`,
       keywords:[],
       category: ['javascript', 'rxjs'],
     },
@@ -127,7 +127,7 @@ synchroniczny.</p>
     {
       id: 10,
       title: 'Co ma wspólnego protokoół HTTP z REST?',
-      answer: 'REST nie jest synonimem HTTP. REST jest rozwiązaniem architektonicznym, które z owego protokołu korzysta.',
+      answer: 'REST jest rozwiązaniem architektonicznym, które z owego protokołu http korzysta. REST nie jest synonimem HTTP. ',
       keywords:[],
       category: ['networks'],
     },
@@ -154,7 +154,7 @@ synchroniczny.</p>
     {
       id: 12,
       title: 'Do czego służy protokół http i https?',
-      answer: 'Protokół przesyłania dokumentów hipertekstowych (stron WWW) (http:port 80, https:443). Protokół https dodatkowo wkykorzystuje protokoły szyfrujące TLS lub SSL',
+      answer: `Są to protokoły przesyłania dokumentów hipertekstowych (stron WWW) (http:port 80, https:443).<br><br> Protokół https dodatkowo wkykorzystuje protokoły szyfrujące TLS lub SSL`,
       keywords:[],
       category: ['networks'],
     },
@@ -162,15 +162,15 @@ synchroniczny.</p>
     {
       id: 13,
       title: 'Jakie znasz protokoły sieciowe?',
-      answer: 'HTTP\tProtokół przesyłania dokumentów hipertekstowych (stron WWW)\t80\n' +
-        'HTTPS\tSzyfrowany protokół HTTP wykorzystujący protokoły szyfrujące TLS lub SSL\t443\n' +
-        'POP3\tProtokół odbierania poczty elektronicznej\t110 (szyfrowany 995)\n' +
-        'IMAP\tProtokół odbierania poczty elektronicznej umożliwiający zarządzanie folderami znajdującymi się w skrzynce pocztowej\t143 (szyfrowany 993)\n' +
-        'SMTP\tProtokół wysyłania poczty elektronicznej\t25 (szyfrowany 465 lub 587)\n' +
-        'FTP\tProtokół przesyłania plików\t21 (polecenia) i 20 (pliki)\n' +
-        'FTPS\tSzyfrowany protokół FTP\t990\n' +
-        'SSH\tSzyfrowany protokół połączenia terminalowego\t22\n' +
-        'DNS\tProtokół zamiany nazw domenowych na adresy IP\t53',
+      answer: `HTTP Protokół przesyłania dokumentów hipertekstowych (stron WWW) 80 <br><br>
+        HTTPS Szyfrowany protokół HTTP wykorzystujący protokoły szyfrujące TLS lub SSL 443<br><br>
+        POP3 Protokół odbierania poczty elektronicznej 110 (szyfrowany 995)<br><br>
+        IMAP Protokół odbierania poczty elektronicznej umożliwiający zarządzanie folderami znajdującymi się w skrzynce pocztowej 143 (szyfrowany 993)<br><br>
+        SMTP Protokół wysyłania poczty elektronicznej 25 (szyfrowany 465 lub 587)<br><br>
+        FTP Protokół przesyłania plików 21 (polecenia) i 20 (pliki) <br><br>
+        FTPS Szyfrowany protokół FTP 990<br><br>
+        SSH Szyfrowany protokół połączenia terminalowego 22<br><br>
+        DNS Protokół zamiany nazw domenowych na adresy IP 53`,
       keywords:[],
       category: ['networks'],
     },
@@ -240,7 +240,15 @@ synchroniczny.</p>
     {
       id: 21,
       title: 'Dlaczego stworzono High-Order mapping operators?',
-      answer: 'Stworzono je w celu uniknięcia zagnieżdzonych subskrybcji.',
+      answer: `
+
+      <p>Stworzono je w celu uniknięcia zagnieżdzonych subskrybcji.</p>
+      <br>
+      <p>np. switchMap(...), mergeMap(...)</p>
+
+
+
+      `,
       keywords:[],
       category: ['rxjs'],
     },
@@ -266,13 +274,6 @@ synchroniczny.</p>
       keywords:[],
       category: ['rxjs'],
     },
-    {
-      id: 25,
-      title: 'Czym sie rozni complete od unsubscribe?',
-      answer: '<p>odpowiedz</p>',
-      keywords:[],
-      category: ['rxjs'],
-    },
 
     {
       id: 26,
@@ -285,11 +286,9 @@ synchroniczny.</p>
     {
       title: 'Czym różni się complete od unsubscribe?',
       answer: `
+        <p>Complete jest metodą obiektu <b>Observable</b>. Wywołanie tej metody powoduje, że obiekt typu Observable przestaje wysyłać lub przyjmować wartości (jest skończony).</p><br>
         <p>
-        Complete jest metodą obiektu Observable. Wywołanie tej metody powoduje że obiekt typu Observable przestaje wysyłać wartości (jest skonczony)
-        </p>
-        <p>
-        Unsubscribe natomiast jest metodą obiektu Subscription. Kiedy subskrybujemy się do obiektu typu Observable przy pomocy metody subscribe,
+        Unsubscribe(...) - natomiast jest metodą obiektu <b>Subscription</b>. Kiedy subskrybujemy się do obiektu typu Observable przy pomocy metody subscribe(...),
         otrzymujemy referencję do tej subkrybcji. Jeżeli chcemy przestać obserwować źródło danych to wywołujemy metodę unsubscribe na obiekcie Subscription.
         </p>
         `,
@@ -502,7 +501,20 @@ synchroniczny.</p>
         `,
       keywords: [],
       category: ['Angular']
-    }
+    },
+
+
+    {
+      title: 'Czy promise może być synchroniczny? Jak stworzyć?',
+      answer: `
+        <p>
+          Promise jest stworzony do asynchronicznych operacji. Nie da się go używać synchronicznie.
+        </p>
+        `,
+      keywords: [],
+      category: ['javascript']
+    },
+
 
 
 
