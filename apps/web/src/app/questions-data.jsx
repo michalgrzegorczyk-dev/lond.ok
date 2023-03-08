@@ -38,7 +38,7 @@ synchroniczny.</p>
     },
     {
       id: 2,
-      title: 'Czym jest synchroniczność w Javascript?',
+      title: 'Na czym polega synchroniczność w Javascript?',
       answer:
         `
 <p>Synchroniczność oznacza, że kod wykonuje się w określonej sekwencji instrukcji podanych w programie. Każda poprzednia instrukcja czeka na wykonanie poprzedniej instrukcji. Np.</p>
@@ -88,21 +88,21 @@ synchroniczny.</p>
     },
     {
       id: 5,
-      title: 'Jak wywołać kilka wątków w javascript?',
-      answer: 'Javascript nie wspiera wielowątkowości - nic się nie da z tym zrobić w czystym Javascript, ponieważ we wszystkich przeglądarkach Javascript wywołuje się w jednym wątku.',
+      title: 'Jak wywołać kilka wątków w Javascript?',
+      answer: 'Javascript nie wspiera wielowątkowości - nic się nie da z tym zrobić w czystym (vanilla) Javascript, ponieważ we wszystkich przeglądarkach Javascript wywołuje się w jednym wątku.',
       keywords:[],
       category: ['javascript'],
     },
     {
       id: 6,
-      title: 'Co to jest promise?',
-      answer: 'Obiekt, który reprezentuje ewentualne zakończenie (lub niepowodzenie) asynchronicznej operacji - zwracając wartość.',
+      title: 'Co to jest Promise?',
+      answer: `Obiekt, który reprezentuje ewentualne zakończenie <i>ang. eventual completion</i> (lub niepowodzenie) asynchronicznej operacji - zwracając wartość.`,
       keywords:[],
       category: ['javascript'],
     },
     {
       id: 7,
-      title: 'Jakie stany ma promise?',
+      title: 'Ile oraz jakie stany ma Promise?',
       answer: `pending - odpalenie promista <br><br>fulfilled - operacja zakonczona powodzeniem <br><br>rejected- operacja zakonczona porazka`,
       keywords:[],
       category: ['javascript'],
@@ -119,14 +119,14 @@ synchroniczny.</p>
     },
     {
       id: 9,
-      title: 'Rozwiń skrót rest',
+      title: 'Rozwiń skrót REST',
       answer: 'REST jest akronimem od REpresentational State Transfer',
       keywords:[],
       category: ['networks'],
     },
     {
       id: 10,
-      title: 'Co ma wspólnego protokoół HTTP z REST?',
+      title: 'Co ma wspólnego protokoół http/s z REST?',
       answer: 'REST jest rozwiązaniem architektonicznym, które z owego protokołu http korzysta. REST nie jest synonimem HTTP. ',
       keywords:[],
       category: ['networks'],
@@ -134,19 +134,7 @@ synchroniczny.</p>
     {
       id: 11,
       title: 'Jakie są reguły RESTful?',
-      answer: 'Nie ma oficjalnego standardu REST, a jedynie zbiór reguł, z których można korzystać lub nie. \n' +
-        '- Jednolity interfejs komunikacyjny\n' +
-        'Serwer powinien udostępiać API, które będzie rozumiane przez wiele aplikacji - czyli np. serwer obsługuje zapytania HTTP dla aplikacji mobilnych, aplikacji desktopowych, stron www itd.\n' +
-        '\n' +
-        '- Podział na aplikacje klient-serwer\n' +
-        'Rozdzielenie aplikacji pozwala na ich niezależny rozwój i działanie. Taki podział zwiększa możliwości skalowania i rozszerzalności.\n' +
-        '\n' +
-        '- Bezstanowość (Stateless)\n' +
-        'Oznacza to, że po stronie serwera nie powinno być mechanizmów przetrzymujących dane klienta, które byłby by potrzebne do poprawnego działania systemu. API nie powinno trzymać stanu aplikacji, a jedynie interpretować informacje przesłane przez klienta. Klient powinien wysyłać tylko komplet informacji potrzebnych do poprawnego wykonania żądania (request)\n' +
-        '\n' +
-        'Reguła ta jest mocno powiązana z sesją użytkownika, która często jest realizowana po stronie serwera. W przypadku RESTful API, każdy request, który trafia do serwera powinien zawierać w nagłówku token, np. JWT. To na jego podstawie API decyduje, czy request zostanie przyjęty czy odrzucony.\n' +
-        '\n' +
-        '- CDN. Cacheability',
+      answer: '',
       keywords:[],
       category: ['networks'],
     },
@@ -194,59 +182,62 @@ synchroniczny.</p>
     },
     {
       id: 16,
-      title: 'Gdzie najczęściej angular staje się podatny na tak wirusów?',
-      answer: 'Używanie blibliotek z vulnerabilities (brak aktualizacji paczek)\n' +
-        'Zła autoryzacja użytkowników (robiona od zera, jeśli jest tyle dobrych providerów)\n' +
-        'Cross-site script (XSS) np. {{ trustedData }} (domyślnie angular zapobiega temu)\n' +
-        'Zepsute kontrolowanie dostępów do aplikacji\n' +
-        'Źle zrobiona konfiguracja (np. hasła przetrzymywane w kodzie)\n' +
-        'Brak monitoringu i logowania',
+      title: 'Kiedy Angular jest najbardziej podatny na atak hakerski?',
+      answer: `
+        Używanie blibliotek z vulnerabilities (brak aktualizacji paczek) <br><br>
+        Zła autoryzacja użytkowników (robiona od zera, jeśli jest tyle dobrych providerów) <br><br>
+        Cross-site script (XSS) np. {{ trustedData }} (domyślnie angular blokuje przez sanitizera) <br><br>
+        Zepsute kontrolowanie dostępów do aplikacji <br><br>
+        Źle zrobiona konfiguracja (np. hasła przetrzymywane w kodzie) <br><br>
+        Brak monitoringu i logowani`,
       keywords:[],
-      category: ['security'],
+      category: ['security', 'angular'],
     },
     {
       id: 17,
-      title: 'Który operator użyć w przypadku gdy chcemy aby zapytanie HTTP nie zostało przerwane przy emisji nowej wartości zewnętrznego observabla?',
+      title: 'Który operator użyć w przypadku gdy chcemy, aby zapytanie HTTP nie zostało przerwane przy emisji nowej wartości zewnętrznego observabla?',
       answer: 'exhaustMap',
       keywords:[],
       category: ['rxjs'],
     },
     {
       id: 18,
-      title: 'Jakie są 2 główne typy operatorów w rxjs?',
-      answer: 'Pipeable oraz Creation operatory.\n' +
-        'Pipeable operator to taki operator który może zostać użyty w następujący sposób: observableInstance.pipe(operator()).\n' +
-        'Pipeable operatory są funkcjami czystymi (pure function), które przyjmują jeden observable jako parametr i zwracają nowego observabla.\n' +
-        'Wejściowa instancja observabla zostaje nienaruszona.\n' +
-        'Creation operator to taka funkcja która jest w stanie stworzyć nowego observabla.',
+      title: 'Jakie są 2 główne typy operatorów w RXJS?',
+      answer: `
+        <b>Pipeable</b> oraz <b>Creation</b> operatory. <br><br>
+        Pipeable operator to taki operator, który może zostać użyty w następujący sposób: observableInstance.pipe(operator()). <br><br>
+        Pipeable operatory są funkcjami czystymi (pure function), które przyjmują jeden observable jako parametr i zwracają nowego observabla. (nową referencje) <br>
+        Wejściowa instancja observabla zostaje nienaruszona. <br><br>
+        Creation operator to taka funkcja, która jest w stanie stworzyć nowego observabla np. of(), from()`,
       keywords:[],
       category: ['rxjs'],
     },
     {
       id: 19,
       title: 'Czym jest High-Order Observable?',
-      answer: 'Jest to taki observable który zwraca innego observabla (np. mergeMap)',
+      answer: `Jest to taki observable, który zwraca innego observabla (np. mergeMap) <br><br>
+
+
+`,
       keywords:[],
       category: ['rxjs'],
     },
     {
       id: 20,
       title: 'Jaka jest różnica pomiędzy mergeMap i concatMap?',
-      answer: 'concatMap zachowuje kolejność wartości w strumieniu i na wyjściu subskrybent otrzyma wartości w tej samej kolejności.\n' +
-        'Natomiast w przypadku mergeMap ta kolejność nie jest zachowana i gdy jakiś wewnetrzy observable wyemituje wartość, to od razu ta wartość jest przekazywana do subskrybenta\n',
+      answer: `concatMap zachowuje kolejność wartości w strumieniu i na wyjściu subskrybent otrzyma wartości w tej samej kolejności. <br><br>
+        'Natomiast w przypadku mergeMap ta kolejność nie jest zachowana i gdy jakiś wewnetrzy observable wyemituje wartość, to od razu ta wartość jest przekazywana do subskrybenta`,
       keywords:[],
       category: ['rxjs'],
     },
     {
       id: 21,
-      title: 'Dlaczego stworzono High-Order mapping operators?',
+      title: 'Dlaczego stworzono High-Order rxjs mapping operators?',
       answer: `
 
-      <p>Stworzono je w celu uniknięcia zagnieżdzonych subskrybcji.</p>
+      <p>Stworzono je w celu uniknięcia zagnieżdzonych subskrybcji (wewnetrzene observable sa subskrybowane ale nie natywnie tylko w ukryciu).</p>
       <br>
       <p>np. switchMap(...), mergeMap(...)</p>
-
-
 
       `,
       keywords:[],
@@ -255,7 +246,7 @@ synchroniczny.</p>
     {
       id: 22,
       title: 'Co to jest event bubbling?',
-      answer: 'Kiedy zdarzenie ma miejsce na elemencie, najpierw uruchamia procedury obsługi na nim, następnie na jego rodzicu, a następnie na wszystkich przodkach. Od głębszego do najpłytszego.',
+      answer: 'Kiedy zdarzenie ma miejsce na zagnieżdżonym elemencie to kolejnośc uruchomienia następuje od najgłębszego do najpłytszego.',
       keywords:[],
       category: ['javascript'],
     },
@@ -268,9 +259,9 @@ synchroniczny.</p>
     },
     {
       id: 24,
-      title: 'Co się stanie gdy chcemy się zasubskrybowac do Subject\'a na którym wczesniej wywolaliśmy `complete()` lub `unsubscribe()`',
-      answer: `Jeśli damy unsubscribe i po nim subscribe lub next to wyrzuci error ObjectUnsubscribedError.
-      Natomiast jesli damy complete i po nim pozniej subscribe lub next to wartosci nie beda sie juz emitowac (nic sie nie stanie)`,
+      title: 'Co się stanie, gdy chcemy się zasubskrybować do Subject\'a, na którym wcześniej wywołaliśmy complete() lub unsubscribe()?',
+      answer: `Jeśli wywołamy unsubscribe() i po nim subscribe() lub next() to wyrzuci error - ObjectUnsubscribedError.<br><br>
+      Natomiast, jeśli wywołamy complete() i po nim subscribe() lub next() to wartości nie beda sie juz emitowac (nic sie nie stanie)`,
       keywords:[],
       category: ['rxjs'],
     },
@@ -278,18 +269,18 @@ synchroniczny.</p>
     {
       id: 26,
       title: 'Czy dyrektywa może mieć ChangeDetection.OnPush',
-      answer: '<p>odpowiedz</p>',
+      answer: `Dyrektywa nie ma pola changeDetection w dektoratorze @Directive - wiec nie.`,
       keywords:[],
-      category: ['rxjs'],
+      category: ['angular'],
     },
 
     {
-      title: 'Czym różni się complete od unsubscribe?',
+      title: 'Czym różni się complete() od unsubscribe()?',
       answer: `
-        <p>Complete jest metodą obiektu <b>Observable</b>. Wywołanie tej metody powoduje, że obiekt typu Observable przestaje wysyłać lub przyjmować wartości (jest skończony).</p><br>
+        <p>Complete() jest metodą obiektu <b>Observable</b>. Wywołanie tej metody powoduje, że obiekt typu Observable przestaje wysyłać lub przyjmować wartości (jest skończony).</p><br>
         <p>
-        Unsubscribe(...) - natomiast jest metodą obiektu <b>Subscription</b>. Kiedy subskrybujemy się do obiektu typu Observable przy pomocy metody subscribe(...),
-        otrzymujemy referencję do tej subkrybcji. Jeżeli chcemy przestać obserwować źródło danych to wywołujemy metodę unsubscribe na obiekcie Subscription.
+        Unsubscribe() - jest metodą obiektu <b>Subscription</b>. Kiedy subskrybujemy się do obiektu typu Observable przy pomocy metody subscribe(),
+        otrzymujemy referencję do tej subkrybcji. Jeżeli chcemy przestać obserwować źródło danych to wywołujemy metodę unsubscribe() na obiekcie Subscription.
         </p>
         `,
       keywords: [],
@@ -298,14 +289,16 @@ synchroniczny.</p>
     {
       title: 'Czym jest View Encapsulation w Angularze?',
       answer: `
-        <p>
+
             Jest to sposób ograniczenia zasięgów selektorów stylu dla komponentu. Występują 3 startegie View Encapsulation w Angularze:
             <ul>
                 <li>ViewEncapsulation.ShadowDom</li>
                 <li>ViewEncapsulation.Emulated - domyślny</li>
                 <li>ViewEncapsulation.None</li>
             </ul>
-        </p>
+
+            <a href="https://kevinkreuzer.medium.com/the-difference-between-angulars-emulated-shadow-dom-and-native-shadow-dom-9b2c81546b85">Fajny wpis</a>
+
         `,
       keywords: [],
       category: ['Angular', 'CSS', 'View Encapsulation']
