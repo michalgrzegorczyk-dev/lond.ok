@@ -2,7 +2,9 @@
   "name": "londak-react",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve web"
+  },
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
