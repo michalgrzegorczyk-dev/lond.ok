@@ -196,7 +196,11 @@ synchroniczny.</p>
     {
       id: 17,
       title: 'Który operator użyć w przypadku gdy chcemy, aby zapytanie HTTP nie zostało przerwane przy emisji nowej wartości zewnętrznego observabla?',
-      answer: 'exhaustMap',
+      answer: `
+        <b>exhaustMap</b>
+        <br />
+        Link do Stackblitza z przykładem: <a target="_blank" href="https://stackblitz.com/edit/angular-ng2vve?file=src%2Fmain.ts">LINK</a>
+      `,
       keywords:[],
       category: ['rxjs'],
     },
@@ -226,7 +230,10 @@ synchroniczny.</p>
       id: 20,
       title: 'Jaka jest różnica pomiędzy mergeMap i concatMap?',
       answer: `concatMap zachowuje kolejność wartości w strumieniu i na wyjściu subskrybent otrzyma wartości w tej samej kolejności. <br><br>
-        'Natomiast w przypadku mergeMap ta kolejność nie jest zachowana i gdy jakiś wewnetrzy observable wyemituje wartość, to od razu ta wartość jest przekazywana do subskrybenta`,
+        'Natomiast w przypadku mergeMap ta kolejność nie jest zachowana i gdy jakiś wewnetrzy observable wyemituje wartość, to od razu ta wartość jest przekazywana do subskrybenta
+        <br />
+        Link do Stackblitza z przykładem: <a target="_blank" href="https://stackblitz.com/edit/angular-znycxl?file=src%2Fmain.ts">LINK</a>
+        `,
       keywords:[],
       category: ['rxjs'],
     },
